@@ -1,0 +1,7 @@
+PyQt5>=5.15,<6
+nibabel>=5.2,<6
+numpy>=1.26,<3
+Pillow>=10,<12
+matplotlib>=3.8,<4
+scikit-image>=0.24,<0.26
+scipy>=1.11,<2
