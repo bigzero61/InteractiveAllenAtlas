@@ -1,28 +1,66 @@
-# Interactive Allen Atlas Program
+# Interactive Allen Atlas
 
-A PyQt5 desktop viewer for the Allen CCFv3 P56 brain atlas and annotation.
+A PyQt5 desktop viewer for the Allen CCFv3 P56 mouse brain atlas and annotation.
 
-The app renders locally in the Python process, so slice scrolling, search,
-crosshair lookup, mosaic refresh, region merges, and PDF export do not require a
-browser or a web server.
+Interactive Allen Atlas lets you quickly view, search, merge, and export annotated
+brain regions from the adult mouse brain. The app renders locally in Python, so
+slice scrolling, region search, crosshair lookup, mosaic refresh, merge editing,
+and PDF export do not require a browser or a web server.
 
-## Features
+## Highlights
 
 - Three orthogonal views: sagittal, coronal, and axial.
-- Mosaic view with axis, start/end anchor, row count, column count, and step.
-- Brain-region tree with all parent and child structures.
-- Search by acronym, full name, id, or hierarchy path.
+- Mosaic view with axis, start/end anchor, row count, column count, and slice step.
+- Brain-region tree containing both parent and child structures.
+- Search by acronym, full name, structure id, or hierarchy path.
 - Hemisphere filter: both, left, or right.
 - Overlay modes: fill, fill selected, contour labels, contour selected, and combined fill/contour modes.
 - Custom merge groups with one display color per merged group.
-- Optional acronyms, orientation labels, XYZ coordinate labels in mm, crosshair, hover lookup, scale bar, and color bar.
+- Optional acronyms, orientation labels, XYZ coordinates in mm, crosshair, hover lookup, scale bar, and color bar.
+- Adjustable underlay contrast.
 - Underlay upload with perm/flip orientation controls.
-- PDF export with text labels drawn as editable PDF text where possible.
+- PDF export with editable text labels where possible.
+
+## Screenshots
+
+### Main Workspace
+
+<img width="1920" height="1032" alt="Interactive Allen Atlas main workspace" src="https://github.com/user-attachments/assets/0eedeb9f-3f2c-436d-93ff-368bc9413117" />
+
+### Mosaic View
+
+<img width="1463" height="1009" alt="Mosaic view" src="https://github.com/user-attachments/assets/d106ae3a-41b3-413c-b929-56b7fbe20516" />
+
+### Region Search
+
+Search results can match structure acronyms, full names, ids, or hierarchy paths.
+Selecting a region can quickly move the views to that region.
+
+<img width="467" height="737" alt="Region search" src="https://github.com/user-attachments/assets/88251af0-1118-4cb7-b7d6-c0b5e1a7d29d" />
+
+### Overlay Modes
+
+The overlay modes make it easy to focus on selected parent structures, child
+structures, merged regions, or contour boundaries.
+
+| Fill selected | Selected contour |
+| --- | --- |
+| <img width="504" height="745" alt="Fill selected overlay mode" src="https://github.com/user-attachments/assets/9ddb7862-423c-420d-b40f-1b08854d244e" /> | <img width="526" height="745" alt="Selected contour overlay mode" src="https://github.com/user-attachments/assets/3cda0093-7de0-4f6c-bfe1-47627d3e71cc" /> |
+
+| Label fill | Standard fill | Label contours |
+| --- | --- | --- |
+| <img width="691" height="780" alt="Label fill overlay mode" src="https://github.com/user-attachments/assets/9b755cb2-72ea-4ec8-922b-e3c51ed2ccc4" /> | <img width="509" height="758" alt="Standard fill overlay mode" src="https://github.com/user-attachments/assets/9e36b486-69e9-40be-90db-e41a68d50e32" /> | <img width="695" height="749" alt="Label contours overlay mode" src="https://github.com/user-attachments/assets/45d7c1b8-237c-4426-9beb-e6f9ca008820" /> |
+
+### Merge Groups
+
+Merge groups let you combine multiple structures and display them with one custom
+color. This can also be used to recolor a region of interest.
+
+<img width="1923" height="1029" alt="Merge groups" src="https://github.com/user-attachments/assets/fad570be-25dc-41bd-b36f-c33e965efdac" />
 
 ## Included Data
 
-The repository copy in this folder includes the default Allen atlas files in
-`data/atlas/`:
+This repository includes the default Allen atlas files in `data/atlas/`:
 
 - `P56_Atlas.nii.gz`
 - `ABA_v3_P56_Annotation_downloaded.nii.gz`
@@ -32,7 +70,9 @@ If you do not want to commit these large data files to GitHub, remove
 `data/atlas/*.nii.gz` before publishing and tell users to place the files back
 in `data/atlas/`.
 
-## Linux Install
+## Installation
+
+### Linux
 
 Requirements: Python 3.10 to 3.12 is recommended.
 
@@ -50,13 +90,13 @@ bash scripts/install_atlas_command.sh
 atlas
 ```
 
-By default this creates `~/.local/bin/atlas`. Make sure `~/.local/bin` is in
+By default, this creates `~/.local/bin/atlas`. Make sure `~/.local/bin` is in
 your `PATH`.
 
-## Windows Install
+### Windows
 
-Requirements: Python 3.10 to 3.12 from <https://www.python.org/downloads/> is recommended.
-During Python installation, enable "Add python.exe to PATH".
+Requirements: Python 3.10 to 3.12 from <https://www.python.org/downloads/> is
+recommended. During Python installation, enable **Add python.exe to PATH**.
 
 Open Command Prompt or PowerShell:
 
@@ -69,38 +109,21 @@ run_windows.bat
 
 You can also double-click `run_windows.bat` after installation.
 
-## Windows Portable EXE
+### Windows Portable EXE
 
-Build the portable package on Windows:
-
-```bat
-scripts\build_windows_portable.bat
-```
-
-Or with PowerShell:
-
-```powershell
-.\scripts\build_windows_portable.ps1
-```
-
-The build creates:
+Download the `.zip` file from the repository's **Releases** page, unzip it, and
+run:
 
 ```text
-release\InteractiveAtlas_Windows_Portable.zip
+InteractiveAtlas_Windows_Portable\InteractiveAtlas.exe
 ```
 
-Share this zip file with Windows users. They only need to unzip it and
-double-click `InteractiveAtlas.exe`; Python does not need to be installed on the
-target computer.
-
-Build note: PyInstaller Windows executables should be built on Windows. A Linux
-machine can prepare the source project, but it usually cannot reliably produce a
-native Windows `.exe` for PyQt5, SciPy, scikit-image, matplotlib, and nibabel.
+No Python installation is required for the portable Windows build.
 
 ## Custom Atlas Paths
 
-By default the app reads data from `data/atlas/`. You can override the default
-files with environment variables:
+By default, the app reads data from `data/atlas/`. You can override the default
+files with environment variables.
 
 Linux:
 
@@ -131,8 +154,13 @@ The app creates runtime files under `data/`:
 - `data/merges.json`: merge groups for the current run.
 - `data/underlay.json`: uploaded underlay state.
 
-The desktop app clears merge and uploaded-underlay state when it starts and
-when it closes. Cache files are ignored by Git.
+The desktop app clears merge and uploaded-underlay state when it starts and when
+it closes. Cache files are ignored by Git.
+
+## Roadmap
+
+Other atlas resources, such as human brain atlases, may be tested in future
+versions.
 
 ## Developer Notes
 
@@ -144,3 +172,18 @@ python3 -m venv .venv
 pip install -r requirements.txt
 python main.py
 ```
+
+Build the portable Windows package on Windows:
+
+```bat
+scripts\build_windows_portable.bat
+```
+
+## License
+
+The source code in this repository is released under the MIT License.
+
+Bundled Allen Institute atlas data files are not covered by the MIT License.
+They remain subject to the Allen Institute Terms of Use and Citation Policy.
+Users are responsible for complying with those terms when using or redistributing
+the atlas data.
