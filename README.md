@@ -4,6 +4,8 @@ A PyQt5 desktop viewer for the Allen CCFv3 P56 mouse brain atlas and annotation.
 
 Interactive Allen Atlas lets you quickly and smoothly view, search, merge, and export annotated brain regions from the adult mouse brain.
 
+中文版本: [README_zh.md](README_zh.md)
+
 ## Highlights
 
 - Three orthogonal views: sagittal, coronal, and axial.
