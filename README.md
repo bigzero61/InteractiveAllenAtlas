@@ -2,24 +2,21 @@
 
 A PyQt5 desktop viewer for the Allen CCFv3 P56 mouse brain atlas and annotation.
 
-Interactive Allen Atlas lets you quickly view, search, merge, and export annotated
-brain regions from the adult mouse brain. The app renders locally in Python, so
-slice scrolling, region search, crosshair lookup, mosaic refresh, merge editing,
-and PDF export do not require a browser or a web server.
+Interactive Allen Atlas lets you quickly and smoothly view, search, merge, and export annotated brain regions from the adult mouse brain.
 
 ## Highlights
 
 - Three orthogonal views: sagittal, coronal, and axial.
-- Mosaic view with axis, start/end anchor, row count, column count, and slice step.
+- **Mosaic view** with axis, start/end anchor, row count, column count, and slice step.
 - Brain-region tree containing both parent and child structures.
-- Search by acronym, full name, structure id, or hierarchy path.
-- Hemisphere filter: both, left, or right.
-- Overlay modes: fill, fill selected, contour labels, contour selected, and combined fill/contour modes.
-- Custom merge groups with one display color per merged group.
-- Optional acronyms, orientation labels, XYZ coordinates in mm, crosshair, hover lookup, scale bar, and color bar.
+- **Search** by acronym, full name, structure id, or hierarchy path.
+- **Hemisphere filter**: both, left, or right.
+- **Overlay modes**: fill, fill selected, contour labels, contour selected, and combined fill/contour modes.
+- Custom **merge** groups with one display color per merged group. (Trick: With this feature, you can easily change the color of any region(s) as you like.)
+- Optional display of acronyms, orientation labels, XYZ coordinates in mm, crosshair, hover lookup, scale bar, and color bar.
 - Adjustable underlay contrast.
-- Underlay upload with perm/flip orientation controls.
-- PDF export with editable text labels where possible.
+- Underlay (.nii.gz/.nii format) upload with perm/flip orientation controls. (Note: you should register your underlay image to the atlas first. But the good thing is you don't need to change your image to the same orientation.)
+- PDF export with **editable text** labels where possible.
 
 ## Screenshots
 
