@@ -77,7 +77,7 @@ in `data/atlas/`.
 Requirements: Python 3.10 to 3.12 is recommended.
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/bigzero61/InteractiveAllenAtlas.git
 cd InteractiveAtlas_program_github
 bash scripts/install_linux.sh
 ./run.sh
