@@ -1,10 +1,13 @@
+<p align="right">
+  <a href="README.md"><img src="https://img.shields.io/badge/Language-English-0969DA" alt="English README"></a>
+  <a href="README_zh.md"><img src="https://img.shields.io/badge/Language-简体中文-D73A49" alt="简体中文 README"></a>
+</p>
+
 # Interactive Allen Atlas
 
 A PyQt5 desktop viewer for the Allen CCFv3 P56 mouse brain atlas and annotation.
 
 Interactive Allen Atlas lets you quickly and smoothly view, search, merge, and export annotated brain regions from the adult mouse brain.
-
-中文版本: [README_zh.md](README_zh.md)
 
 ## Highlights
 

@@ -7,7 +7,7 @@ TARGET="${1:-$HOME/.local/bin/atlas}"
 mkdir -p "$(dirname "$TARGET")"
 cat > "$TARGET" <<EOF
 #!/usr/bin/env bash
-exec "$ROOT/run.sh" "\$@"
+exec bash "$ROOT/run.sh" "\$@"
 EOF
 chmod +x "$TARGET"
 

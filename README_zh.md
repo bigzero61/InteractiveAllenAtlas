@@ -1,10 +1,13 @@
+<p align="right">
+  <a href="README.md"><img src="https://img.shields.io/badge/Language-English-0969DA" alt="English README"></a>
+  <a href="README_zh.md"><img src="https://img.shields.io/badge/Language-简体中文-D73A49" alt="简体中文 README"></a>
+</p>
+
 # Interactive Allen Atlas
 
 一款用于 Allen CCFv3 P56 小鼠脑图谱及注释可视化的 PyQt5 桌面应用。
 
 Interactive Allen Atlas 可以帮助你快速、流畅地浏览、搜索、合并并导出标注脑区。
-
-English version: [README.md](README.md)
 
 ## 主要功能
 
