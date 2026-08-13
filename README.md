@@ -103,7 +103,7 @@ recommended. During Python installation, enable **Add python.exe to PATH**.
 Open Command Prompt or PowerShell:
 
 ```bat
-git clone <your-repo-url>
+git clone https://github.com/bigzero61/InteractiveAllenAtlas.git
 cd InteractiveAtlas_program_github
 scripts\install_windows.bat
 run_windows.bat

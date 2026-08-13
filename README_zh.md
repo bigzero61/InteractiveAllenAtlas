@@ -97,7 +97,7 @@ atlas
 在命令提示符或 PowerShell 中执行：
 
 ```bat
-git clone <your-repo-url>
+git clone https://github.com/bigzero61/InteractiveAllenAtlas.git
 cd InteractiveAtlas_program_github
 scripts\install_windows.bat
 run_windows.bat
