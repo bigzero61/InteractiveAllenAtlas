@@ -90,6 +90,10 @@ atlas
 
 默认会创建 `~/.local/bin/atlas`。请确保 `~/.local/bin` 已加入你的 `PATH`。
 
+Linux 安装脚本默认会把虚拟环境创建在
+`~/.local/share/interactive-allen-atlas/venv`。如果你想放到别的位置，可以
+设置 `INTERACTIVE_ATLAS_VENV`。
+
 ### Windows
 
 要求：推荐 Python 3.10 到 3.12，下载地址：<https://www.python.org/downloads/>。安装 Python 时请勾选 **Add python.exe to PATH**。
@@ -98,7 +102,7 @@ atlas
 
 ```bat
 git clone https://github.com/bigzero61/InteractiveAllenAtlas.git
-cd InteractiveAtlas_program_github
+cd InteractiveAllenAtlas
 scripts\install_windows.bat
 run_windows.bat
 ```
@@ -159,10 +163,8 @@ $env:ATLAS_STRUCTURE_GRAPH_JSON = "D:\Atlas\ALLEN_atlas\ABA_v3_structure_graph.j
 从源码直接运行：
 
 ```bash
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -r requirements.txt
-python main.py
+bash scripts/install_linux.sh
+./run.sh
 ```
 
 在 Windows 上构建便携版：

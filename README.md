@@ -80,7 +80,7 @@ Requirements: Python 3.10 to 3.12 is recommended.
 
 ```bash
 git clone https://github.com/bigzero61/InteractiveAllenAtlas.git
-cd InteractiveAtlas_program_github
+cd InteractiveAllenAtlas
 bash scripts/install_linux.sh
 ./run.sh
 ```
@@ -95,6 +95,10 @@ atlas
 By default, this creates `~/.local/bin/atlas`. Make sure `~/.local/bin` is in
 your `PATH`.
 
+The Linux installer creates the virtual environment in
+`~/.local/share/interactive-allen-atlas/venv` by default. Set
+`INTERACTIVE_ATLAS_VENV` if you want a different location.
+
 ### Windows
 
 Requirements: Python 3.10 to 3.12 from <https://www.python.org/downloads/> is
@@ -104,7 +108,7 @@ Open Command Prompt or PowerShell:
 
 ```bat
 git clone https://github.com/bigzero61/InteractiveAllenAtlas.git
-cd InteractiveAtlas_program_github
+cd InteractiveAllenAtlas
 scripts\install_windows.bat
 run_windows.bat
 ```
@@ -169,10 +173,8 @@ versions.
 Run directly from source:
 
 ```bash
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -r requirements.txt
-python main.py
+bash scripts/install_linux.sh
+./run.sh
 ```
 
 Build the portable Windows package on Windows:
